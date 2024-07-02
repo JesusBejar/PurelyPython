@@ -15,13 +15,20 @@ pygame.display.set_icon(icono)
 
 # ICONO DE JUGADOR
 img_jugador = pygame.image.load("./DÍA10-INVASIÓN-ESPACIAL/cohete.png")
+jugador_x = 368
+jugador_y = 536
 
+def jugador():
+    pantalla.blit(img_jugador, (jugador_x, jugador_y))
 # LOOP DEL JUEGO
 se_ejecuta = True 
 while se_ejecuta:
+    # RGB COLOR DE FONDO
+    pantalla.fill((250, 242, 7))
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             se_ejecuta = False
 
-    pantalla.fill((250, 242, 7))
+    jugador()
+
     pygame.display.update()
