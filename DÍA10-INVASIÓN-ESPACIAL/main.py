@@ -10,8 +10,11 @@ pantalla = pygame.display.set_mode((800, 600))
 
 #TITULO & ICONO
 pygame.display.set_caption("Invasión Espacial")
-icono = pygame.image.load("ovni.png")
+icono = pygame.image.load("./DÍA10-INVASIÓN-ESPACIAL/ovni.png")
 pygame.display.set_icon(icono)
+
+# ICONO DE JUGADOR
+img_jugador = pygame.image.load("./DÍA10-INVASIÓN-ESPACIAL/cohete.png")
 
 # LOOP DEL JUEGO
 se_ejecuta = True 
@@ -19,3 +22,6 @@ while se_ejecuta:
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             se_ejecuta = False
+
+    pantalla.fill((250, 242, 7))
+    pygame.display.update()
