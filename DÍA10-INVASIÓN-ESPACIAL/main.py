@@ -9,7 +9,9 @@ pygame.init()
 pantalla = pygame.display.set_mode((800, 600))
 
 #TITULO & ICONO
-
+pygame.display.set_caption("Invasión Espacial")
+icono = pygame.image.load("ovni.png")
+pygame.display.set_icon(icono)
 
 # LOOP DEL JUEGO
 se_ejecuta = True 
