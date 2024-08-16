@@ -21,9 +21,20 @@ jugador_x = 368
 jugador_y = 536
 jugador_x_cambio = 0
 
+# variable del enemigo
+img_enemigo = pygame.image.load("./DÍA10-INVASIÓN-ESPACIAL/enemigo64.png")
+enemigo_x = 368
+enemigo_y = 200
+enemigo_x_cambio = 0
+
 # funcion jugador 
 def jugador(x, y):
     pantalla.blit(img_jugador, (x, y))
+
+# funcion enemigo 
+def enemigo(x, y):
+    pantalla.blit(img_enemigo, (x, y))
+
 # LOOP DEL JUEGO
 se_ejecuta = True 
 while se_ejecuta:
@@ -55,7 +66,15 @@ while se_ejecuta:
     # modificar lugar del jugador
     jugador_x += jugador_x_cambio
 
+    # mantener dentro de bordes
+    if jugador_x <= 0:
+        jugador_x = 0
+    
+    elif jugador_x >= 736:
+        jugador_x = 736
+
     jugador(jugador_x, jugador_y)
+    enemigo(enemigo_x, enemigo_y)
 
     # actualizar
     pygame.display.update()
